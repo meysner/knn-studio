@@ -1,0 +1,5 @@
+{
+  "name": "knn.meysner.ru",
+  "description": "An interactive visualization tool for the K-Nearest Neighbors algorithm. Experiment with datasets, distance metrics (Euclidean, Manhattan, Minkowski, Cosine), weighting strategies, and see real-time classification results on a zoomable canvas.",
+  "requestFramePermissions": []
+}

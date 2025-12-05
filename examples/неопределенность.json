@@ -1,0 +1,138 @@
+{
+  "metadata": {
+    "name": "Неопределенность",
+    "description": "3 Weighting - 3 исхода"
+  },
+  "points": [
+    {
+      "id": "qdbw24l8q",
+      "x": 0.5125885311300974,
+      "y": 0.6750590207533993,
+      "type": "train",
+      "label": "Class A",
+      "isUserCreated": false
+    },
+    {
+      "id": "5949vsmh4",
+      "x": 0.6358276679900885,
+      "y": 0.5511269227078788,
+      "type": "train",
+      "label": "Class A",
+      "isUserCreated": false
+    },
+    {
+      "id": "fl2z0x2mi",
+      "x": 0.6479454187178163,
+      "y": 0.6788403339546962,
+      "type": "train",
+      "label": "Class A",
+      "isUserCreated": false
+    },
+    {
+      "id": "xoywsu5al",
+      "x": 0.5321947088666605,
+      "y": 0.804741327132367,
+      "type": "train",
+      "label": "Class A",
+      "isUserCreated": false
+    },
+    {
+      "id": "4hnvo53en",
+      "x": 0.7955961110913926,
+      "y": 0.5730056672515917,
+      "type": "train",
+      "label": "Class A",
+      "isUserCreated": false
+    },
+    {
+      "id": "3lp3tbfg6",
+      "x": 0.7869599995430407,
+      "y": 0.7083047481757712,
+      "type": "train",
+      "label": "Class A",
+      "isUserCreated": false
+    },
+    {
+      "id": "0rof4ytwi",
+      "x": 0.6732511974897412,
+      "y": 0.8061806790570923,
+      "type": "train",
+      "label": "Class A",
+      "isUserCreated": false
+    },
+    {
+      "id": "u498d9bca",
+      "x": 0.233215455010764,
+      "y": 0.39126619108373517,
+      "type": "train",
+      "label": "Class C",
+      "isUserCreated": false
+    },
+    {
+      "id": "7x2x5rygj",
+      "x": 0.40491772231077006,
+      "y": 0.2669300664871791,
+      "type": "train",
+      "label": "Class C",
+      "isUserCreated": false
+    },
+    {
+      "id": "1c47cbc0c",
+      "x": 0.45371497516659576,
+      "y": 0.20983019453538918,
+      "type": "train",
+      "label": "Class B",
+      "isUserCreated": false
+    },
+    {
+      "id": "k5selw6pb",
+      "x": 0.27979602087601724,
+      "y": 0.2869757908531495,
+      "type": "train",
+      "label": "Class B",
+      "isUserCreated": false
+    },
+    {
+      "id": "c6teavdrd",
+      "x": 0.14336605689767504,
+      "y": 0.41621986924624776,
+      "type": "train",
+      "label": "Class B",
+      "isUserCreated": false
+    },
+    {
+      "id": "bot1tkon9",
+      "x": 0.432250526117253,
+      "y": 0.46653331924838276,
+      "type": "test",
+      "label": "Class A",
+      "isUserCreated": false,
+      "predictedLabel": "Class B",
+      "isCorrect": false,
+      "hasTie": true
+    }
+  ],
+  "config": {
+    "k": 4,
+    "metric": "euclidean",
+    "minkowskiP": 3,
+    "weighting": "uniform",
+    "weights": {
+      "x": 1,
+      "y": 1
+    },
+    "visualizeWeights": false
+  },
+  "filters": {
+    "x": {},
+    "y": {}
+  },
+  "visualSettings": {
+    "pointRadius": 4,
+    "lineWidth": 1.5,
+    "showLines": true
+  },
+  "splitRatio": 100,
+  "datasetState": null,
+  "hiddenClasses": []
+}
