@@ -25,7 +25,7 @@ const [config, setConfig] = useState<KNNConfig>({
 
 также хранятся и настройки данных, но отдельно в стейтах:
 
-```
+```typescript
 // App.tsx
 const [config, setConfig] = useState<KNNConfig>({
   // ...
@@ -34,7 +34,7 @@ const [config, setConfig] = useState<KNNConfig>({
 });
 ```
 
-```
+```typescript
 // App.tsx
 const [filters, setFilters] = useState<FilterState>({
     x: { min: undefined, max: undefined },
@@ -170,7 +170,7 @@ while (cursor < allNeighbors.length) {
 
 определяется
 
-```
+```typescript
 // App.tsx
 const [filters, setFilters] = useState<FilterState>({
     x: { min: undefined, max: undefined },
@@ -180,7 +180,7 @@ const [filters, setFilters] = useState<FilterState>({
 
 и применяем внутри функции загрузки сырых данных applyDatasetState,приложение проверяет каждую точку на соответствие фильтрам.
 
-```
+```typescript
 // App.tsx -> applyDatasetState
 
 rawRows.forEach(r => {
@@ -212,7 +212,7 @@ rawRows.forEach(r => {
 
 в когфиге
 
-```
+```typescript
 // App.tsx
 const [config, setConfig] = useState<KNNConfig>({
   // ...
@@ -223,7 +223,7 @@ const [config, setConfig] = useState<KNNConfig>({
 
 и применяется в формуле расчета дистанции services/knnLogic.ts. Разница координат умножается на вес до возведения в степень или взятия модуля.
 
-```
+```typescript
 // services/knnLogic.ts
 
 export const calculateDistance = (
@@ -258,3 +258,73 @@ export const calculateDistance = (
 изменив класы мы можем получить другую зависимость
 ![](docs-images/2.png)
 здесь мы може видеть что с достаточно высокой вероятностью сможем узнать с какого острова пингвин по тем же признакам, но с условием что длина его клюва больше 44мм, июо менее
+
+
+# Локальный запуск
+## Развертывание и запуск
+
+### Предварительные требования
+*   **Node.js**: v18 или выше
+*   **npm**: v9 или выше
+*   **Docker** и **Docker Compose** (для контейнеризации)
+
+### Локальный запуск (для разработки)
+
+1.  **Установка зависимостей**
+    Используйте `npm ci` для чистой установки зависимостей, зафиксированных в `package-lock.json`.
+
+    ```bash
+    npm ci
+    ```
+
+2.  **Запуск сервера разработки**
+    Приложение запустится в режиме `dev` с горячей перезагрузкой (HMR).
+
+    ```bash
+    npm run dev
+    ```
+    
+    По умолчанию приложение будет доступно по адресу: `http://localhost:3000` (порт может быть изменен в `vite.config.ts` или через переменную окружения `APP_PORT`).
+
+3.  **Сборка для продакшена**
+    Для создания оптимизированной сборки в папку `dist`:
+
+    ```bash
+    npm run build
+    ```
+
+    Для предпросмотра собранной версии:
+    ```bash
+    npm run preview
+    ```
+
+---
+
+### Запуск через Docker
+
+Проект содержит настроенный `Dockerfile` (multistage-сборка с Nginx) и `docker-compose.yml`.
+
+1.  **Сборка и запуск контейнера**
+    Команда соберет образ и запустит контейнер в фоновом режиме.
+
+    ```bash
+    docker-compose up -d --build
+    ```
+
+2.  **Доступ к приложению**
+    Согласно конфигурации в `docker-compose.yml`, приложение будет доступно по адресу:
+    
+    `http://127.0.0.1:1324`
+
+3.  **Настройка порта**
+    Вы можете изменить порт хоста, передав переменную окружения `APP_PORT` перед запуском:
+
+    ```bash
+    APP_PORT=8080 docker-compose up -d
+    ```
+    *(В этом случае приложение будет доступно на порту 8080)*
+
+4.  **Остановка**
+    ```bash
+    docker-compose down
+    ```
